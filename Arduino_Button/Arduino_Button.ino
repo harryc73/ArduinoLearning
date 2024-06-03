@@ -1,9 +1,17 @@
+#include "PushButton.h"
+#define Button_PIN 2
+
+PushButton button(Button_PIN); // creating an object of the class and the parameter is the pin number which is 2
+
+
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(9600);
+  button.init(); //initialise the mode of the pin for the button (no need to worry about which pin is used)
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  Serial.println(button.readState()); //reading the state of the board through calling the function in the class
+  delay(100);
 
 }
