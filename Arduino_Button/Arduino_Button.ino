@@ -1,5 +1,5 @@
 #include "PushButton.h"
-#define Button_PIN 2
+#define Button_PIN 3
 
 PushButton button(Button_PIN); // creating an object of the class and the parameter is the pin number which is 2
 
