@@ -1,5 +1,5 @@
 #include "PushButton.h"
-#define Button_PIN 2
+#define Button_PIN 3
 
 PushButton button(Button_PIN, true, true); // creating an object of the class and the parameter is the pin number which is 2
 // true true is there because are using pullup resistor and it is activcated as per the if statement in the void function
