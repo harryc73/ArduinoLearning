@@ -9,6 +9,7 @@ Led::Led(byte pin)
     // Use this when there is a double up of names
     this->_pin = pin;
     // You can use: _pin = pin;
+    state = LOW; // intialising state in the contrusctor so it has a default value
   }
 
   void Led::init() // initialiser just like python oop
@@ -29,10 +30,27 @@ Led::Led(byte pin)
 
   void Led:: on() // use void to make new functions
   {
-    digitalWrite(_pin, HIGH);
+    state = HIGH; // making the state high so HIGH can be stored as a varaible so can be called later in toggle
+    digitalWrite(_pin, state); // self explanatory, turning on the LED
   }
 
   void Led:: off()
   {
-    digitalWrite(_pin, LOW);
+    state= LOW;
+    digitalWrite(_pin, state); // replacing it with state so it can be called in toggle for abstraction
+  }
+
+  bool Led::isPoweredOn()
+  {
+    return (state == HIGH); // higher level context function so state == high can be replaced
+  }
+
+  void Led::toggle()
+  {
+    if (isPoweredOn()){
+      off();
+    }
+    else{
+      on();
+    }
   }

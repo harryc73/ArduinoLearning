@@ -7,6 +7,7 @@ class Led
 {
 private:
   byte _pin; //example of encapsulation, can't change pin
+  byte state; // adding the state of the LED for the toggle class
 public:
 
   // A deafualt constructors has 0 parameters, if you do not add you may have a compilation error
@@ -26,5 +27,7 @@ public:
 
   // power on/off the LED depending on previous state
   void toggle();
+
+  bool isPoweredOn();
 };
 #endif // used for when this file is included from other files
