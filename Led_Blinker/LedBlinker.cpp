@@ -4,7 +4,7 @@ LedBlinker::LedBlinker(Led &led) // must use & for future constructor calls
 {
   this->led = led;
   lastTimeBlinked = millis();
-  blinkDelay = 500 // blink delay is 500, the LED blinks every 500 ms
+  blinkDelay = 500; // blink delay is 500, the LED blinks every 500 ms
 }
 
 LedBlinker::LedBlinker(Led &led, unsigned long BlinkDelay) // it is a function because up top is parent class
